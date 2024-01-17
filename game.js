@@ -1,8 +1,6 @@
-// Basic rock, paper, scissors game.
+// What this file does: Implements logic for basic rock, paper, scissors game.
 
 //////////////////////////// Helper Functions //////////////////////////////
-
-// Get computer hand
 
 let getCompHand = () => {
     let num = Math.floor(3*Math.random());
@@ -16,30 +14,23 @@ let getCompHand = () => {
     }
 }
 
-// Get user hand
-
 let getUsrHand = () => {
-    //Get user input.
     let hand = prompt("Rock, paper, scissors shoot! (type your answer)");
-    if (hand == null) {return hand}; // Return none if user pressed cancel.
+
+    if (hand == null) {return hand}; // If hand is null it means user cancelled the game.
+    hand = hand.toLowerCase(); // Lower casing allows for case sensitive input.
     
-    hand = hand.toLowerCase();
-    
-    //check for invalid answers.
     while (hand != "rock" && hand != "paper" && hand != "scissors") {
         hand = prompt("You've entered an invalid answer. Please choose between rock, paper, and scissors.");
-        if (hand == null) {break}; // Break and return none if user pressed cancel.
         
+        if (hand == null) {break}; 
         hand = hand.toLowerCase();
     }
 
     return hand
 }
 
-// Play one round
-
 let playOneRound = () => {
-    //Get user and computer hands.
     let usr = getUsrHand();
     if (usr === null) {return null};
     let comp = getCompHand();
