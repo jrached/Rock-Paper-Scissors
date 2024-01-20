@@ -55,33 +55,33 @@ let playOneRound = () => {
 
 //////////////////////////// Main Function ///////////////////////
 
-let rockPaperScissors = () => {
-    let compScore = 0,
-        usrScore = 0;
+// let rockPaperScissors = () => {
+//     let compScore = 0,
+//         usrScore = 0;
 
-    //Play best out of 5 rounds.
-    while (compScore < 3 &&  usrScore < 3) {
-        outcome = playOneRound();
-        if (outcome === null) {return "You Forfeited"}
+//     //Play best out of 5 rounds.
+//     while (compScore < 3 &&  usrScore < 3) {
+//         outcome = playOneRound();
+//         if (outcome === null) {return "You Forfeited"}
 
         
-        if (outcome.slice(0, 7) === "You Win") {
-            usrScore += 1;
-        }
-        if (outcome.slice(0,8) === "You Lose") {
-            compScore += 1;
-        }
+//         if (outcome.slice(0, 7) === "You Win") {
+//             usrScore += 1;
+//         }
+//         if (outcome.slice(0,8) === "You Lose") {
+//             compScore += 1;
+//         }
         
-        console.log(outcome);
-    }
+//         console.log(outcome);
+//     }
 
-    //Decide winner.
-    if (usrScore > compScore) {
-        return "You've Won! Congratulations!";
-    } else {
-        return "You've Lost! Wah wah..."
-    }
+//     //Decide winner.
+//     if (usrScore > compScore) {
+//         return "You've Won! Congratulations!";
+//     } else {
+//         return "You've Lost! Wah wah..."
+//     }
 
-}
+// }
 
 console.log(rockPaperScissors());
