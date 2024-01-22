@@ -66,14 +66,14 @@ html, body {
 .content .top .text {
     text-align: center;
     font-size: 28px;
-    color: rgb(151, 61, 20);
+    color: rgb(141, 57, 18);
     
 }
 
 .content .top .subtext {
     text-align: center;
     font-size: 22px;
-    color: rgb(151, 61, 20);
+    color: rgb(141, 57, 18);
 }
 
 /* middle */
@@ -95,7 +95,7 @@ html, body {
     width: 60%;
 }
 
-.box {
+.box1, .box2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,11 +103,11 @@ html, body {
     gap: 15px;
 }
 
-/* .box img {
+/* .box1 img, .box2 img {
     border: 2px solid red;
 } */
 
-.box .text {
+.box1 .text, .box2 .text {
     text-align: center;
     font-size: 25px;
     color: rgb(255, 100, 146);

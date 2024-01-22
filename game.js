@@ -1,5 +1,10 @@
 // What this file does: Implements logic for basic rock, paper, scissors game.
 
+// ////////////////////////Global Variables ///////////////////////////////////
+let usrScore = 0,
+    compScore = 0,
+    reset = false;
+
 //////////////////////////// Helper Functions //////////////////////////////
 
 let getCompHand = () => {
@@ -14,31 +19,26 @@ let getCompHand = () => {
     }
 }
 
-let getUsrHand = () => {
-    let hand = prompt("Rock, paper, scissors shoot! (type your answer)");
-
-    if (hand == null) {return hand}; // If hand is null it means user cancelled the game.
-    hand = hand.toLowerCase(); // Lower casing allows for case sensitive input.
-    
-    while (hand != "rock" && hand != "paper" && hand != "scissors") {
-        hand = prompt("You've entered an invalid answer. Please choose between rock, paper, and scissors.");
-        
-        if (hand == null) {break}; 
-        hand = hand.toLowerCase();
-    }
-
-    return hand
-}
+// //////////////////////////Main Function/////////////////////////
 
 let playOneRound = (usr) => {
-    if (usr === null) {return null};
+    if (reset == true) {
+        usrScore = 0;
+        compScore = 0;
+        reset = false;
+    }
+
     let comp = getCompHand();
     
+    //Get selectors
     let text = document.querySelector(".top .text");
     let subtext = document.querySelector(".top .subtext");
 
-    let img1 = document.querySelector(".box .img1");
-    let img2 = document.querySelector(".box .img2");
+    let img1 = document.querySelector(".box1 .img");
+    let img2 = document.querySelector(".box2 .img");
+
+    let usrPoints = document.querySelector(".box1 .text");
+    let compPoints = document.querySelector(".box2 .text");
 
     //Basic rock, paper, scissors rules decide round.
     if (usr === comp) {
@@ -87,43 +87,33 @@ let playOneRound = (usr) => {
         img1.src = "./images/paper.png";
         img2.src = "./images/scissors.png";
     }
+
+    // Update points and score board
+    if (text.textContent.slice(4,7) == "Win") {
+        usrScore += 1;
+    } else if (text.textContent.slice(4,8) == "Lose") {
+        compScore += 1;
+    }
+
+    usrPoints.textContent = "You: " + usrScore;
+    compPoints.textContent = "Puter: " + compScore;
+
+    //Decide winner
+    if (usrScore === 3) {
+        text.textContent = "Congrats, You've Won!";
+        subtext.textContent = "Final Score: " + usrScore + "-" + compScore;
+        reset = true;      
+    }
+
+    if (compScore === 3) {
+        text.textContent = "You've Lost! Wah Wah...";
+        subtext.textContent = "Final Score: " + usrScore + "-" + compScore;
+        reset = true;    
+    }
 }
 
-//////////////////////////// Main Function ///////////////////////
 
-// let rockPaperScissors = () => {
-//     let compScore = 0,
-//         usrScore = 0;
-
-//     //Play best out of 5 rounds.
-//     while (compScore < 3 &&  usrScore < 3) {
-//         outcome = playOneRound();
-//         if (outcome === null) {return "You Forfeited"}
-
-        
-//         if (outcome.slice(0, 7) === "You Win") {
-//             usrScore += 1;
-//         }
-//         if (outcome.slice(0,8) === "You Lose") {
-//             compScore += 1;
-//         }
-        
-//         console.log(outcome);
-//     }
-
-//     //Decide winner.
-//     if (usrScore > compScore) {
-//         return "You've Won! Congratulations!";
-//     } else {
-//         return "You've Lost! Wah wah..."
-//     }
-
-// }
-
-// console.log(rockPaperScissors());
-
-
-////////////////////////////// NEW STUFF //////////////////////////
+//////////////////////////////Event Listeners //////////////////////////
 
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");
