@@ -101,13 +101,17 @@ let playOneRound = (usr) => {
     //Decide winner
     if (usrScore === 3) {
         text.textContent = "Congrats, You've Won!";
-        subtext.textContent = "Final Score: " + usrScore + "-" + compScore;
+        subtext.textContent = usr.slice(0,1).toUpperCase() + usr.slice(1) + " beats " + comp.slice(0,1).toUpperCase() + comp.slice(1);
+        img1.src = "./images/plankton.webp";
+        img2.src = "./images/puter.png";
         reset = true;      
     }
 
     if (compScore === 3) {
         text.textContent = "You've Lost! Wah Wah...";
-        subtext.textContent = "Final Score: " + usrScore + "-" + compScore;
+        subtext.textContent = comp.slice(0,1).toUpperCase() + comp.slice(1) + " beats " + usr.slice(0,1).toUpperCase() + usr.slice(1);
+        img1.src = "./images/plankton2.png";
+        img2.src = "./images/puter2.webp";
         reset = true;    
     }
 }
