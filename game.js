@@ -30,26 +30,62 @@ let getUsrHand = () => {
     return hand
 }
 
-let playOneRound = () => {
-    let usr = getUsrHand();
+let playOneRound = (usr) => {
     if (usr === null) {return null};
     let comp = getCompHand();
+    
+    let text = document.querySelector(".top .text");
+    let subtext = document.querySelector(".top .subtext");
+
+    let img1 = document.querySelector(".box .img1");
+    let img2 = document.querySelector(".box .img2");
 
     //Basic rock, paper, scissors rules decide round.
     if (usr === comp) {
-        return "tie";
+        text.textContent = "Tie!";
+        if (usr === "rock") {
+            subtext.textContent = "You both chose Rock"
+            img1.src = "./images/rock.png";
+            img2.src = "./images/rock.png";
+        } else if (usr === "paper") {
+            subtext.textContent = "You both chose Paper"
+            img1.src = "./images/paper.png";
+            img2.src = "./images/paper.png";
+        } else {
+            subtext.textContent = "You both chose Scissors"
+            img1.src = "./images/scissors.png";
+            img2.src = "./images/scissors.png";
+        }
     } else if (usr === "rock" && comp === "scissors") {
-        return "You Win! Rock beats Scissors";
+        text.textContent = "You Win!";
+        subtext.textContent = "Rock beats Scissors";
+        img1.src = "./images/rock.png";
+        img2.src = "./images/scissors.png";
     } else if (usr === "rock" && comp === "paper") {
-        return "You Lose! Paper beats Rock";
+        text.textContent = "You Lose!";
+        subtext.textContent = "Paper beats Rock";
+        img1.src = "./images/rock.png";
+        img2.src = "./images/paper.png";
     } else if (usr === "scissors" && comp === "paper") {
-        return "You Win! Scissors beats Paper";
+        text.textContent = "You Win!";
+        subtext.textContent = "Scissors beat Paper";
+        img1.src = "./images/scissors.png";
+        img2.src = "./images/paper.png";
     } else if (usr === "scissors" && comp === "rock") {
-        return "You Lose! Rock beats Scissors";
+        text.textContent = "You Lose!";
+        subtext.textContent = "Rock beats Scissors";
+        img1.src = "./images/scissors.png";
+        img2.src = "./images/rock.png";
     } else if (usr === "paper" && comp === "rock") {
-        return "You Win! Paper beats Rock";
+        text.textContent = "You Win!";
+        subtext.textContent = "Paper beats Rock";
+        img1.src = "./images/paper.png";
+        img2.src = "./images/rock.png";
     } else if (usr === "paper" && comp === "scissors") {
-        return "You Lose! Scissors beats Paper";
+        text.textContent = "You Lose!";
+        subtext.textContent = "Scissors beat Paper";
+        img1.src = "./images/paper.png";
+        img2.src = "./images/scissors.png";
     }
 }
 
@@ -88,3 +124,15 @@ let playOneRound = () => {
 
 
 ////////////////////////////// NEW STUFF //////////////////////////
+
+let btn1 = document.querySelector(".btn1");
+let btn2 = document.querySelector(".btn2");
+let btn3 = document.querySelector(".btn3");
+
+btn1.addEventListener("click", () => {playOneRound("rock")});
+
+btn2.addEventListener("click", () => {playOneRound("paper")});
+
+btn3.addEventListener("click", () => {playOneRound("scissors")});
+
+

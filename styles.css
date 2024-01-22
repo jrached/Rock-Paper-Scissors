@@ -18,7 +18,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(20, 73, 143);
+    background-color: rgb(28, 96, 185);
     height: 125px;
 }
 
@@ -38,7 +38,7 @@ html, body {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    background-color: rgb(54, 153, 128);
+    background-color: rgb(72, 196, 165);;
 }
 
 /* top */
@@ -49,17 +49,31 @@ html, body {
     justify-content: flex-start;
     align-items: center;
     margin-top: 34px;
-    
 }
+.content .top .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 160, 59);
+    height: 100px;
+    border-radius: 20px;
+    width: 30%;
+    min-width: 250px;
+    padding: 10px;
 
+}
 .content .top .text {
     text-align: center;
     font-size: 28px;
+    color: rgb(151, 61, 20);
+    
 }
 
 .content .top .subtext {
     text-align: center;
     font-size: 22px;
+    color: rgb(151, 61, 20);
 }
 
 /* middle */
@@ -70,6 +84,7 @@ html, body {
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
+    margin-top: 45px;
     /* border: 2px solid blue; */
 }
 
@@ -85,6 +100,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 
 /* .box img {
@@ -93,7 +109,9 @@ html, body {
 
 .box .text {
     text-align: center;
-    font-size: 22px;
+    font-size: 25px;
+    color: rgb(255, 100, 146);
+    
     /* border: 2px solid red; */
 
 }
@@ -114,15 +132,15 @@ html, body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    background-color: rgb(54, 153, 128);
     border-radius: 50px;
     width: 50%;
     /* border: 2px solid red; */
     flex-wrap: wrap;
 }
 
-.btn {
-    background-color: white;
+.btn1, .btn2, .btn3 {
+    /* background-color: rgb(248, 159, 189); */
+    background-color: rgb(85, 224, 189);
     border-radius: 50px;
     width: 30%;
     min-width: 140px;
@@ -130,8 +148,8 @@ html, body {
     border-color: transparent;
 }
 
-.btn img {
-    border-radius: 50px;
+.buttons img {
+    border-radius: 20px;
     width: 30%;
     min-width: 100px;
     height: auto;
@@ -144,7 +162,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(20, 73, 143);
+    background-color:rgb(28, 96, 185);
     color: yellow;
     text-align: center;
     height: 45px;
