@@ -124,9 +124,49 @@ let btn2 = document.querySelector(".btn2");
 let btn3 = document.querySelector(".btn3");
 
 btn1.addEventListener("click", () => {playOneRound("rock")});
+btn1.addEventListener("mouseover", () => {
+    btn1.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn1.addEventListener("mousedown", () => {
+    btn1.style["background-color"] = "rgb(113, 255, 220)";
+})
+btn1.addEventListener("mouseup", () => {
+    btn1.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn1.addEventListener("mouseout", () => {
+    btn1.style["background-color"] = "rgb(80, 209, 177)";
+})
+
+
 
 btn2.addEventListener("click", () => {playOneRound("paper")});
+btn2.addEventListener("mouseover", () => {
+    btn2.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn2.addEventListener("mousedown", () => {
+    btn2.style["background-color"] = "rgb(113, 255, 220)";
+})
+btn2.addEventListener("mouseup", () => {
+    btn2.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn2.addEventListener("mouseout", () => {
+    btn2.style["background-color"] = "rgb(80, 209, 177)";
+})
+
 
 btn3.addEventListener("click", () => {playOneRound("scissors")});
+btn3.addEventListener("mouseover", () => {
+    btn3.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn3.addEventListener("mousedown", () => {
+    btn3.style["background-color"] = "rgb(113, 255, 220)";
+})
+btn3.addEventListener("mouseup", () => {
+    btn3.style["background-color"] = "rgb(93, 238, 202)";
+})
+btn3.addEventListener("mouseout", () => {
+    btn3.style["background-color"] = "rgb(80, 209, 177)";
+})
+
 
 
