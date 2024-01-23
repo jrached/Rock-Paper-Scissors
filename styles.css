@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Spongeboy'; /* Choose a custom name for your font */
+    src: url('./fonts/sponge/Spongeboy.otf') format('opentype'),
+    /* Add more src lines if you have additional font file formats */
+  }
+  
+body {
+    font-family: "Spongeboy";
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -22,6 +32,7 @@ button:hover {
 }
 
 
+
 /*////////////////////////////////////// Header ///////////////////////////////////////*/
 
 .header {
@@ -30,10 +41,11 @@ button:hover {
     align-items: center;
     background-color: rgb(28, 96, 185);
     height: 115px;
+    padding-top: 15px;
 }
 
 .header .text {
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
     color: yellow;
 }
@@ -75,14 +87,14 @@ button:hover {
 
 .content .top .text {
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     color: rgb(141, 57, 18);
     
 }
 
 .content .top .subtext {
     text-align: center;
-    font-size: 22px;
+    font-size: 14px;
     color: rgb(141, 57, 18);
 }
 
