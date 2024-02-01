@@ -1,6 +1,11 @@
 # Rock-Paper-Scissors
 
-Credits
+<a href="https://jrached.github.io/Rock-Paper-Scissors/">Live Preview</a>
+
+
+
+
+Sources:
 
 Font:
 
